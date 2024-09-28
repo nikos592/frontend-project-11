@@ -1,0 +1,45 @@
+ name: Node CI
+
+   on:
+     push:
+     pull_request:
+
+   env:
+     CI: true
+
+   jobs:
+     build:
+       runs-on: ubuntu-latest
+
+       strategy:
+         matrix:
+           node-version: [20.x]
+
+       steps:
+         - name: Check out the repository
+           uses: actions/checkout@v4
+
+         - name: Install Node.js
+           uses: actions/setup-node@v4
+           with:
+             node-version: ${{ matrix.node-version }}
+             cache: 'npm'
+
+         - run: npm install
+
+         - run: npm run lint
+
+         - run: npm test
+
+         - name: Setup Node.js 20 for CodeClimate
+           uses: actions/setup-node@v4
+           with:
+             node-version: 20
+
+         - name: Run CodeClimate Coverage Report
+           uses: paambaati/codeclimate-action@v5.0.0
+           with:
+             coverageCommand: "cat coverage/lcov.info"
+             coverageType: "lcov"
+           env:
+             CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
