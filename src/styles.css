@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:wght@100;200;300;400;500;600;700;800&display=swap&subset=cyrillic-ext');
+
+:root {
+    --bs-light-rgb: 248, 249, 250; 
+    --bs-bg-opacity: 1; 
+}
+
+html, body {
+    height: 100%; 
+    margin: 0; 
+    font-family: 'Ubuntu', sans-serif;
+    overflow: hidden;
+}
+
+.wrapper {
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh; 
+}
+
+.main-content {
+    flex: 1; 
+    overflow-y: auto;
+}
+
+.footer-container {
+    background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+    margin-top: 0; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    height: 56px; 
+}
+
+.footer-text-container {
+    position: relative;    
+    --bs-gutter-x: -1.5rem;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    text-align: center; 
+}
+
+.footer-text {
+    position: relative; 
+    width: auto; 
+    height: auto; 
+    line-height: 100px; 
+    margin: 0 auto; 
+}
