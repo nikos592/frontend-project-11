@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,19 +7,34 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <script src="bundle.js"></script>
   <div class="wrapper">
-    <div class="main-content">
-    </div>
-    <footer class="footer-container">
-      <div class="footer-text-container ">
-        <div class="footer-text">
-  created by
-  <a href="https://github.com/nikos592"
-  target="_blank">nikos592</a>
-        </div>
+    <header class="header-container">
+      <div>
+        <div class="title-container">
+            <p class="text1">RSS агрегатор</p>
+            <p class="text2">Начните читать RSS сегодня! Это легко, это красиво.</p>
       </div>
-    </footer>
-  </div>
+           <div class="form-container">
+            <form>
+              <input type="text" name="add-rss" id="add-rss" placeholder="Ссылка RSS" aria-label="url" autofocus>
+              <button type="submit" aria-label="add">Добавить</button>
+            </form>
+             <p>Пример: https://lorem-rss.hexlet.app/feed</p>
+           </div> 
+      </div>     
+    </header>
+
+    <main class="main-content">
+      
+    </main>
+
+    <footer class="footer-container">
+              <div>
+                <p>created by
+                <a href="https://github.com/nikos592" target="_blank">
+                  <target="_blank">nikos592</a> </p>
+        </div>
+      </footer>
+    </div>
 </body>
 </html>
