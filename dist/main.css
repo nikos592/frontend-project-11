@@ -1,5 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:wght@100;200;300;400;500;600;700;800&display=swap&subset=cyrillic-ext');
-
+/*!******************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles.css ***!
+  \******************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Ubuntu+Sans:wght@100;200;300;400;500;600;700;800&display=swap&subset=cyrillic-ext);
+/*!**********************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles.css (1) ***!
+  \**********************************************************************/
 html, body {
     height: 100%; 
     margin: 0; 
@@ -95,3 +100,4 @@ button:hover {
     height: 56px; 
     width: 100%;
 }
+
