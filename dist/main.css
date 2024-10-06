@@ -68,13 +68,9 @@ input[type="text"] {
     padding: 0 10px;            
 }
 
-.error-border {
-    color: red;
-    border-color: red;
-}
-
 #error {
     color: red;
+    border-color: red;
 }
 button {
     height: 60px;    
@@ -108,4 +104,3 @@ button:hover {
     height: 56px; 
     width: 100%;
 }
-
