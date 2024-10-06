@@ -68,6 +68,14 @@ input[type="text"] {
     padding: 0 10px;            
 }
 
+.error-border {
+    color: red;
+    border-color: red;
+}
+
+#error {
+    color: red;
+}
 button {
     height: 60px;    
     background-color: #1C5ED7;    
