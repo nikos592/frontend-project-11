@@ -27,31 +27,35 @@ html, body {
 
 .title-container {
     color: #FFFFFF;
+    margin-top: 40px;
 }
 
 .text1 {
-    font-size: 64px;
-    font-weight: 300;    
-    color: #FFFFFF;
+    font-size: 4rem;
+    font-weight: 300;
     margin: 0;
 }
 
 .text2 {
-    font-size: 20px;
-    font-weight: 300;    
-    color: #FFFFFF;
+    font-size: 1.25rem;
+    font-weight: 300;
     margin: 10px 0;
 }
 
 .form-container {
     display: flex;                  
-    flex-direction: column;         
+    flex-direction: column;        
+    margin-top: 20px; 
 }
 
 form {
-    width: 1180px;        
-    display: flex;       
-    align-items: center;   
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 input[type="text"] {
@@ -94,6 +98,58 @@ button:hover {
     width: 100%;
 }
 
+.main-wrapper {
+    box-sizing: border-box;
+    display:flex;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-left: 320px;
+    margin-right: 300px;
+    padding: 48px 48px;
+
+}
+
+.btn {
+    width: 83px;
+    height: 32px;    
+    background-color:white;    
+    color: #1C5ED7;              
+    font-size: 16px;           
+    border: 1px solid #1C5ED7;             
+    cursor: pointer;           
+    margin-left: 400px;
+    padding: 4px;      
+    border-radius: 5px;
+}
+
+.post-list {
+    margin: 0;
+    padding: 0;
+}
+
+.feed-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.post-column {
+    margin-right: 18px;
+}
+
+.feed-column {
+    width: 400px;
+    margin-left: 12px;
+}
+
+.post-list-item {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    padding-bottom: 12px;
+}
+
 .footer-container {
     background-color: #F8F9FA;
     text-align: center;
@@ -103,4 +159,11 @@ button:hover {
     align-items: center;
     height: 56px; 
     width: 100%;
+}
+
+@media (min-width: 768px) {
+    form {
+        width: 1200px;
+    }
+    
 }
