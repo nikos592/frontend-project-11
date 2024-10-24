@@ -1,7 +1,7 @@
 import i18next from 'i18next';
 
 i18next.init({
-  lng: 'ru', // Можно динамически менять язык
+  lng: 'ru',
   debug: true,
   resources: {
     ru: {
@@ -17,7 +17,6 @@ i18next.init({
         },
       },
     },
-    // Другие языковые настройки
   },
 });
 

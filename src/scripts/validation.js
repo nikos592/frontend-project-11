@@ -1,29 +1,30 @@
 import * as Yup from 'yup';
 import i18next from './i18n.js';
 
-const existingUrls = [];
+const form = document.getElementById('rssForm');
+const input = document.getElementById('add-rss');
+const errorElement = document.getElementById('error');
+const addedUrls = new Set();
 
-const schema = Yup.string()
-  .url('Некорректный URL')
-  .notOneOf(existingUrls, i18next.t('URL уже существует'));
+const schema = Yup.string().url(i18next.t('validation.invalidUrl')).test(
+  'is-unique',
+  i18next.t('validation.urlExists'),
+  (value) => !addedUrls.has(value)
+);
 
-document.getElementById('rssForm').addEventListener('submit', (event) => {
+form.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  const inputField = document.getElementById('add-rss');
-  const errorField = document.getElementById('error');
-  const url = inputField.value.trim();
-
-  schema.validate(url)
-    .then(() => {
-      errorField.textContent = '';
-      existingUrls.push(url);
-      inputField.value = '';
-      console.log('URL успешно добавлен:', url);
-      console.log('Текущий список URL:', existingUrls);
+  schema.validate(input.value)
+    .then((validUrl) => {
+      addedUrls.add(validUrl);
+      input.value = ''; 
+      input.classList.remove('input-error');
+      errorElement.textContent = '';
     })
-    .catch((error) => {
-      errorField.textContent = error.message;
+    .catch((err) => {
+      input.classList.add('input-error');
+      errorElement.textContent = err.message;
     });
 });
 
