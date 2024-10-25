@@ -16,7 +16,7 @@
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n// Imports\nvar ___HTML_LOADER_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ./styles.css */ \"./src/styles.css?7bf3\"), __webpack_require__.b);\nvar ___HTML_LOADER_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! ./scripts/validation.js */ \"./src/scripts/validation.js?999c\"), __webpack_require__.b);\n// Module\nvar code = `<!DOCTYPE html>\n<html lang=\"ru\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Document</title>\n  <link rel=\"stylesheet\" href=\"${___HTML_LOADER_IMPORT_0___}\">\n  ${\"<\" + \"script\"} src=\"${___HTML_LOADER_IMPORT_1___}\" defer>${\"<\" + \"/script\"}>\n</head>\n<body>\n  <div class=\"wrapper\">\n    <header class=\"header-container\">\n      <div>\n        <div class=\"title-container\">\n          <p class=\"text1\" id=\"title\">RSS агрегатор</p>\n          <p class=\"text2\" id=\"description\">Начните читать RSS сегодня! Это легко, это красиво.</p>\n        </div>\n        <div class=\"form-container\">\n          <form id=\"rssForm\">\n            <input type=\"text\" name=\"add-rss\" id=\"add-rss\" placeholder=\"Ссылка RSS\" aria-label=\"url\" autofocus>\n            <button type=\"submit\" aria-label=\"add\">Добавить</button>\n          </form>\n          <p>Пример: <a href=\"https://lorem-rss.hexlet.app/feed\" target=\"_blank\">https://lorem-rss.hexlet.app/feed</a></p>\n          <p id = \"error\"></p>\n        </div> \n      </div>     \n    </header>\n\n    <main class=\"main-content\">\n        <section class=\"main-wrapper\">\n          <div class=\"post-column\">\n            <div>\n              <h2>Посты</h2>\n            </div>\n            <ul class=\"post-list\">\n              <li class=\"post-list-item\">\n                <a href=\"http://example.com/test/1729783260\" class=\"link-post\" target=\"_blank\">Lorem ipsum 2024-10-24T15:21:00Z</a>\n                <button type=\"button\" class=\"btn\">Просмотр</button>\n              </li>\n              <li class=\"post-list-item\">\n                <a href=\"http://example.com/test/1729783260\" class=\"link-post\" target=\"_blank\">Lorem ipsum 2024-10-24T15:21:00Z</a>\n                <button type=\"button\" class=\"btn\">Просмотр</button>\n              </li>\n            </ul>\n          </div>\n          <div class=\"feed-column\">\n            <div>\n              <h2>Фиды</h2>\n            </div>\n            <ul class=\"feed-list\">\n              <li class=\"feed-list-item\">\n                <p>Lorem ipsum feed for an interval of 1 minutes with 10 item(s)</p>\n              </li>\n            </ul>\n          </div>\n        </section>\n    </main>\n\n    <footer class=\"footer-container\">\n      <div>\n        <p>created by <a href=\"https://github.com/nikos592\" target=\"_blank\">nikos592</a></p>\n      </div>\n    </footer>\n  </div>\n</body>\n</html>`;\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (code);\n\n//# sourceURL=webpack://@hexlet/code/./src/index.html?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n// Imports\nvar ___HTML_LOADER_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ./styles.css */ \"./src/styles.css?7bf3\"), __webpack_require__.b);\nvar ___HTML_LOADER_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! ./scripts/validation.js */ \"./src/scripts/validation.js?999c\"), __webpack_require__.b);\n// Module\nvar code = `<!DOCTYPE html>\n<html lang=\"ru\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Document</title>\n  <link rel=\"stylesheet\" href=\"${___HTML_LOADER_IMPORT_0___}\">\n  ${\"<\" + \"script\"} src=\"${___HTML_LOADER_IMPORT_1___}\" defer>${\"<\" + \"/script\"}>\n</head>\n<body>\n  <div class=\"wrapper\">\n    <header class=\"header-container\">\n      <div>\n        <div class=\"title-container\">\n          <p class=\"text1\" id=\"title\">RSS агрегатор</p>\n          <p class=\"text2\" id=\"description\">Начните читать RSS сегодня! Это легко, это красиво.</p>\n        </div>\n        <div class=\"form-container\">\n          <form id=\"rssForm\">\n            <input type=\"text\" name=\"add-rss\" id=\"add-rss\" placeholder=\"Ссылка RSS\" aria-label=\"url\" autofocus>\n            <button type=\"submit\" aria-label=\"add\">Добавить</button>\n          </form>\n          <p>Пример: <a href=\"https://lorem-rss.hexlet.app/feed\" target=\"_blank\">https://lorem-rss.hexlet.app/feed</a></p>\n          <p id = \"error\"></p>\n        </div> \n      </div>     \n    </header>\n\n    <main class=\"main-content\">\n        <section class=\"main-wrapper\">\n          <div class=\"post-column\">\n            <div>\n              <h2>Посты</h2>\n            </div>\n            <ul class=\"post-list\">\n              <li class=\"post-list-item\">\n                <a href=\"#\" class=\"link-post\" target=\"_blank\"></a>\n                <button type=\"button\" class=\"btn\">Просмотр</button>\n              </li>\n            </ul>\n          </div>\n          <div class=\"feed-column\">\n            <div>\n              <h2>Фиды</h2>\n            </div>\n            <ul class=\"feed-list\">\n              <li class=\"feed-list-item\">\n                <p></p>\n              </li>\n            </ul>\n          </div>\n        </section>\n    </main>\n\n    <footer class=\"footer-container\">\n      <div>\n        <p>created by <a href=\"https://github.com/nikos592\" target=\"_blank\">nikos592</a></p>\n      </div>\n    </footer>\n  </div>\n</body>\n</html>`;\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (code);\n\n//# sourceURL=webpack://@hexlet/code/./src/index.html?");
 
 /***/ }),
 
@@ -91,7 +91,7 @@ eval("module.exports = __webpack_require__.p + \"b88d04fba731603756b1.css\";\n\n
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-eval("module.exports = __webpack_require__.p + \"c9c1500d9eb17252244c.js\";\n\n//# sourceURL=webpack://@hexlet/code/./src/scripts/validation.js?");
+eval("module.exports = __webpack_require__.p + \"2869a760a4c9531d976c.js\";\n\n//# sourceURL=webpack://@hexlet/code/./src/scripts/validation.js?");
 
 /***/ }),
 
@@ -106,6 +106,28 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/app.js":
+/*!********************!*\
+  !*** ./src/app.js ***!
+  \********************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _fetchRSS_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./fetchRSS.js */ \"./src/fetchRSS.js\");\n/* harmony import */ var _parseFeed_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./parseFeed.js */ \"./src/parseFeed.js\");\n/* harmony import */ var _render_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./render.js */ \"./src/render.js\");\n\n\n\n\ndocument.getElementById('rssForm').addEventListener('submit', async (event) => {\n  event.preventDefault();\n  const url = document.getElementById('add-rss').value;\n\n  try {\n    const rssText = await (0,_fetchRSS_js__WEBPACK_IMPORTED_MODULE_0__.fetchRSSData)(url);\n    const parsedFeed = (0,_parseFeed_js__WEBPACK_IMPORTED_MODULE_1__.parseFeed)(rssText);\n    (0,_render_js__WEBPACK_IMPORTED_MODULE_2__.renderFeeds)(parsedFeed);\n  } catch (error) {\n    console.error('Error fetching or parsing RSS feed:', error);\n    document.getElementById('error').innerHTML = 'Ошибка при загрузке фида. Пожалуйста, попробуйте снова.';\n  }\n});\n\n//# sourceURL=webpack://@hexlet/code/./src/app.js?");
+
+/***/ }),
+
+/***/ "./src/fetchRSS.js":
+/*!*************************!*\
+  !*** ./src/fetchRSS.js ***!
+  \*************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   fetchRSSData: () => (/* binding */ fetchRSSData)\n/* harmony export */ });\nasync function fetchRSSData(url) {\n  const response = await fetch(url);\n  if (!response.ok) {\n    throw new Error('Network response was not ok');\n  }\n  const rssText = await response.text();\n  return rssText;\n}\n\n//# sourceURL=webpack://@hexlet/code/./src/fetchRSS.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -113,7 +135,29 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.html */ \"./src/index.html\");\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css?1553\");\n/* harmony import */ var _scripts_i18n_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scripts/i18n.js */ \"./src/scripts/i18n.js\");\n/* harmony import */ var _scripts_validation_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./scripts/validation.js */ \"./src/scripts/validation.js?5f89\");\n\n\n\n\n\nconsole.log('Test sucsess');\nconsole.log('Hallo');\n\n\n//# sourceURL=webpack://@hexlet/code/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.html */ \"./src/index.html\");\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css?1553\");\n/* harmony import */ var _scripts_i18n_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scripts/i18n.js */ \"./src/scripts/i18n.js\");\n/* harmony import */ var _scripts_validation_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./scripts/validation.js */ \"./src/scripts/validation.js?5f89\");\n/* harmony import */ var _app_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.js */ \"./src/app.js\");\n\n\n\n\n\n\nconsole.log('Test sucsess');\nconsole.log('Hallo');\n\n//# sourceURL=webpack://@hexlet/code/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/parseFeed.js":
+/*!**************************!*\
+  !*** ./src/parseFeed.js ***!
+  \**************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   parseFeed: () => (/* binding */ parseFeed)\n/* harmony export */ });\nfunction parseFeed(rssText) {\n  const parser = new DOMParser();\n  const xmlDoc = parser.parseFromString(rssText, 'application/xml');\n  const items = xmlDoc.querySelectorAll('item');\n  const feedData = [];\n\n  items.forEach(item => {\n    const title = item.querySelector('title').textContent || 'No title';\n    const description = item.querySelector('description').textContent || 'No description';\n    const link = item.querySelector('link').textContent || '#';\n    feedData.push({ title, description, link });\n  });\n\n  return feedData;\n}\n\n//# sourceURL=webpack://@hexlet/code/./src/parseFeed.js?");
+
+/***/ }),
+
+/***/ "./src/render.js":
+/*!***********************!*\
+  !*** ./src/render.js ***!
+  \***********************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   renderFeeds: () => (/* binding */ renderFeeds)\n/* harmony export */ });\nfunction renderFeeds(feedData) {\n  const feedsContainer = document.querySelector('.feed-list');\n  feedsContainer.innerHTML = '';\n\n  feedData.forEach(feed => {\n    const { title, description } = feed;\n\n    const feedElement = document.createElement('li');\n    feedElement.classList.add('feed-list-item');\n\n    feedElement.innerHTML = `\n      <p><strong>${title}</strong></p>\n      <p>${description}</p>\n    `;\n\n    feedsContainer.appendChild(feedElement);\n  });\n}\n\n//# sourceURL=webpack://@hexlet/code/./src/render.js?");
 
 /***/ }),
 
@@ -135,7 +179,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var yup__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! yup */ \"./node_modules/yup/index.esm.js\");\n/* harmony import */ var _i18n_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./i18n.js */ \"./src/scripts/i18n.js\");\n\n\n\nconst form = document.getElementById('rssForm');\nconst input = document.getElementById('add-rss');\nconst errorElement = document.getElementById('error');\nconst addedUrls = new Set();\n\nconst schema = yup__WEBPACK_IMPORTED_MODULE_0__.string().url(_i18n_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].t('validation.invalidUrl')).test(\n  'is-unique',\n  _i18n_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].t('validation.urlExists'),\n  (value) => !addedUrls.has(value)\n);\n\nform.addEventListener('submit', (event) => {\n  event.preventDefault();\n\n  schema.validate(input.value)\n    .then((validUrl) => {\n      addedUrls.add(validUrl);\n      input.value = ''; \n      input.classList.remove('input-error');\n      errorElement.textContent = '';\n    })\n    .catch((err) => {\n      input.classList.add('input-error');\n      errorElement.textContent = err.message;\n    });\n});\n\ndocument.getElementById('title').textContent = _i18n_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].t('title');\ndocument.getElementById('description').textContent = _i18n_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].t('description');\ndocument.querySelector('button[type=\"submit\"]').textContent = _i18n_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].t('add');\n\n\n//# sourceURL=webpack://@hexlet/code/./src/scripts/validation.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var yup__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! yup */ \"./node_modules/yup/index.esm.js\");\n/* harmony import */ var _i18n_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./i18n.js */ \"./src/scripts/i18n.js\");\n\n\n\nconst form = document.getElementById('rssForm');\nconst input = document.getElementById('add-rss');\nconst errorElement = document.getElementById('error');\nconst addedUrls = new Set();\n\nconst schema = yup__WEBPACK_IMPORTED_MODULE_0__.string().url(_i18n_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].t('validation.invalidUrl')).test(\n  'is-unique',\n  _i18n_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].t('validation.urlExists'),\n  (value) => !addedUrls.has(value)\n);\n\nform.addEventListener('submit', (event) => {\n  event.preventDefault();\n\n  schema.validate(input.value)\n    .then((validUrl) => {\n      addedUrls.add(validUrl);\n      input.value = '';\n      input.classList.remove('input-error');\n      errorElement.textContent = '';\n    })\n    .catch((err) => {\n      input.classList.add('input-error');\n      errorElement.textContent = err.message;\n    });\n});\n\ndocument.getElementById('title').textContent = _i18n_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].t('title');\ndocument.getElementById('description').textContent = _i18n_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].t('description');\ndocument.querySelector('button[type=\"submit\"]').textContent = _i18n_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].t('add');\n\n\n//# sourceURL=webpack://@hexlet/code/./src/scripts/validation.js?");
 
 /***/ })
 

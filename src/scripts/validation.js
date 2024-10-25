@@ -18,7 +18,7 @@ form.addEventListener('submit', (event) => {
   schema.validate(input.value)
     .then((validUrl) => {
       addedUrls.add(validUrl);
-      input.value = ''; 
+      input.value = '';
       input.classList.remove('input-error');
       errorElement.textContent = '';
     })
