@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/" }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "buildCommand": "npm run build-production",
+  "outputDirectory": "dist"
+}
