@@ -1,4 +1,4 @@
-export function parseFeed(rssText) {
+ function parseFeed(rssText) {
   const parser = new DOMParser();
   const xmlDoc = parser.parseFromString(rssText, 'application/xml');
 
@@ -19,3 +19,5 @@ export function parseFeed(rssText) {
 
   return feedData;
 }
+
+export default parseFeed;

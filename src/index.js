@@ -1,8 +1,5 @@
-import './index.html';
-import './styles.css';
-import './scripts/i18n.js';
-import './scripts/validation.js';
-import './app.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap';
+import initApp from './init.js';
 
-console.log('Test sucsess');
-console.log('Hallo');
+initApp();

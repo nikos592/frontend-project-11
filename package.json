@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/nikos592/frontend-project-11/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/nikos592/frontend-project-11/actions)",
-  "main": "src/index.js",
+  "main": "src/init.js",
   "scripts": {
     "start": "webpack serve",
     "build-dev": "webpack",
@@ -44,6 +44,7 @@
     "cors": "^2.8.5",
     "i18next": "^23.15.2",
     "nanoid": "^5.0.7",
+    "on-change": "^5.0.1",
     "rss-parser": "^3.13.0",
     "uuid": "^10.0.0",
     "webpack": "^5.95.0",
