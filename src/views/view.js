@@ -5,27 +5,27 @@ export default (state, i18next, elementsDOM) => {
   const getTitle = (title) => (title === null ? i18next.t('emptyTitle') : title);
 
   const renderFeedback = () => {
-    const feedbackElement = elementsDOM.rssFormConteiner.querySelector('.feedback');
+    const feedbackElement = elementsDOM.rssFormContainer.querySelector('.feedback');
     if (state.validStatus === 'success' && state.streamLoadingStatus === 'success') {
       feedbackElement.classList.remove('text-danger');
       feedbackElement.classList.add('text-success');
       feedbackElement.textContent = i18next.t('feedbackMessage.successMsg');
-      elementsDOM.rssFormConteiner.reset();
+      elementsDOM.rssFormContainer.reset();
     }
     if (state.validStatus === 'error' || state.streamLoadingStatus === 'error') {
       feedbackElement.classList.remove('text-success');
       feedbackElement.classList.add('text-danger');
       feedbackElement.textContent = i18next.t(`feedbackMessage.${state.errorMsgFeedback}`);
     }
-    elementsDOM.rssFormConteiner.querySelector('input').focus();
+    elementsDOM.rssFormContainer.querySelector('input').focus();
   };
 
   const renderBlockForm = () => {
     if (state.streamLoadingStatus === 'loading') {
-      elementsDOM.rssFormConteiner.querySelector('input').setAttribute('readonly', '');
+      elementsDOM.rssFormContainer.querySelector('input').setAttribute('readonly', '');
       document.querySelector('button[type=submit]').setAttribute('disabled', 'disabled');
     } else {
-      elementsDOM.rssFormConteiner.querySelector('input').removeAttribute('readonly', '');
+      elementsDOM.rssFormContainer.querySelector('input').removeAttribute('readonly', '');
       document.querySelector('button[type=submit]').removeAttribute('disabled', 'disabled');
       renderFeedback();
     }
@@ -66,9 +66,9 @@ export default (state, i18next, elementsDOM) => {
       feedElement.append(feedDescription);
       feedsList.append(feedElement);
     });
-    elementsDOM.feedsConteiner.innerHTML = '';
-    elementsDOM.feedsConteiner.prepend(feedsList);
-    elementsDOM.feedsConteiner.prepend(headingFeeds);
+    elementsDOM.feedsContainer.innerHTML = '';
+    elementsDOM.feedsContainer.prepend(feedsList);
+    elementsDOM.feedsContainer.prepend(headingFeeds);
   };
     /* eslint-disable no-param-reassign */
   const renderPosts = () => {
@@ -105,9 +105,9 @@ export default (state, i18next, elementsDOM) => {
       postElement.append(buttonElement);
       postsList.prepend(postElement);
     });
-    elementsDOM.postsConteiner.innerHTML = '';
-    elementsDOM.postsConteiner.prepend(postsList);
-    elementsDOM.postsConteiner.prepend(headingPosts);
+    elementsDOM.postsContainer.innerHTML = '';
+    elementsDOM.postsContainer.prepend(postsList);
+    elementsDOM.postsContainer.prepend(headingPosts);
   };
 
   return onChange(state, (path, value) => {

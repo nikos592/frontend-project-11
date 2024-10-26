@@ -6,7 +6,7 @@ import _ from 'lodash';
 import watcher from '../views/view.js';
 import parseRSS from './parseRSS.js';
 
-const proxy = 'https://hexlet-allorigins.herokuapp.com';
+const proxy ='https://allorigins.hexlet.app/get';
 const updateInterval = 5000;
 
 const getProxyURL = (url) => {
