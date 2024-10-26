@@ -16,14 +16,10 @@ const compat = new FlatCompat({
 
 export default [
   {
-    ignores: ['dist/','node_modules'],
-  },
-  {
     languageOptions: {
       globals: {
         ...globals.node,
         ...globals.jest,
-        ...globals.browser,
       },
       parserOptions: {
         // Eslint doesn't supply ecmaVersion in `parser.js` `context.parserOptions`
@@ -50,6 +46,7 @@ export default [
         'error',
         {
           js: 'always',
+          json: 'never',
         },
       ],
       'import/no-named-as-default': 'off',

@@ -2,11 +2,12 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/nikos592/frontend-project-11/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/nikos592/frontend-project-11/actions)",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
     "start": "webpack serve",
     "build-dev": "webpack",
-    "build-production": "webpack --node-env=production"
+    "build-production": "webpack --node-env=production",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -20,13 +21,13 @@
   "type": "module",
   "homepage": "https://github.com/nikos592/frontend-project-11#readme",
   "devDependencies": {
-    "@eslint/js": "^9.11.1",
+    "@eslint/js": "^9.13.0",
     "babel-loader": "^9.2.1",
     "css-loader": "^7.1.2",
     "eslint": "^8.57.1",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.30.0",
-    "globals": "^15.9.0",
+    "globals": "^15.11.0",
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.0",
     "mini-css-extract-plugin": "^2.9.1",
@@ -39,9 +40,11 @@
   "dependencies": {
     "axios": "^1.7.7",
     "bootstrap": "^5.3.3",
+    "cors": "^2.8.5",
     "i18next": "^23.15.2",
     "nanoid": "^5.0.7",
     "rss-parser": "^3.13.0",
+    "uuid": "^10.0.0",
     "webpack": "^5.95.0",
     "webpack-cli": "^5.1.4",
     "yup": "^1.4.0"
