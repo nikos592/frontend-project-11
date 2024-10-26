@@ -22,6 +22,7 @@
   "type": "module",
   "homepage": "https://github.com/nikos592/frontend-project-11#readme",
   "devDependencies": {
+    "@babel/preset-env": "^7.26.0",
     "@eslint/eslintrc": "^3.1.0",
     "@eslint/js": "^9.13.0",
     "babel-loader": "^9.2.1",
