@@ -39,6 +39,7 @@ export default (state, i18next, elementsDOM) => {
   const renderOpenModal = (postId) => {
     const dataPost = _.find(state.posts, { id: postId });
     const title = getTitle(dataPost.title, i18next);
+    /* eslint-disable no-param-reassign */
     elementsDOM.modalTitle.textContent = title;
     elementsDOM.modalBody.textContent = dataPost.description;
     elementsDOM.modalBtnLink.setAttribute('href', dataPost.link);
@@ -69,7 +70,7 @@ export default (state, i18next, elementsDOM) => {
     elementsDOM.feedsConteiner.prepend(feedsList);
     elementsDOM.feedsConteiner.prepend(headingFeeds);
   };
-
+    /* eslint-disable no-param-reassign */
   const renderPosts = () => {
     const headingPosts = document.createElement('h2');
     headingPosts.textContent = i18next.t('posts');

@@ -1,4 +1,4 @@
- function parseFeed(rssText) {
+function parseRSS(rssText) {
   const parser = new DOMParser();
   const xmlDoc = parser.parseFromString(rssText, 'application/xml');
 
@@ -10,7 +10,7 @@
   const items = xmlDoc.querySelectorAll('item');
   const feedData = [];
 
-  items.forEach(item => {
+  items.forEach((item) => {
     const title = item.querySelector('title')?.textContent || 'Нет заголовка';
     const description = item.querySelector('description')?.textContent || 'Нет описания';
     const link = item.querySelector('link')?.textContent || '#';
@@ -20,4 +20,4 @@
   return feedData;
 }
 
-export default parseFeed;
+export default parseRSS;

@@ -1,7 +1,7 @@
 import i18next from 'i18next';
 import resources from './locales/index.js';
 
-import runApp from './controller.js';
+import runApp from './services/controller.js';
 
 export default () => {
   const i18nextInstance = i18next.createInstance();
