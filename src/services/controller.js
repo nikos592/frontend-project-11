@@ -1,10 +1,10 @@
 /* eslint-disable no-param-reassign */
-import * as yup from 'yup';
 import axios from 'axios';
 import _ from 'lodash';
 
 import watcher from '../views/view.js';
 import parseRSS from './parseRSS.js';
+import validateUrl from './validation.js';
 
 const proxy = 'https://allorigins.hexlet.app/get';
 const updateInterval = 5000;
@@ -15,30 +15,6 @@ const getProxyURL = (url) => {
   proxyURL.searchParams.set('disableCache', 'true');
   proxyURL.searchParams.set('url', url);
   return proxyURL.toString();
-};
-
-const validateUrl = (url, feeds) => {
-  yup.setLocale({
-    string: {
-      url: 'validURL',
-      default: 'unknownError',
-    },
-    mixed: {
-      notOneOf: 'alreadyExists',
-      default: 'unknownError',
-    },
-  });
-
-  const baseUrlSchema = yup.string().url().required();
-  const feedUrls = feeds.map((feed) => feed.url);
-  const actualUrlSchema = baseUrlSchema.notOneOf(feedUrls);
-
-  try {
-    actualUrlSchema.validateSync(url);
-    return null;
-  } catch (e) {
-    return e.message;
-  }
 };
 
 const createPostsArray = (posts, feedId) => posts.map((dataPost) => ({
@@ -77,27 +53,23 @@ const createListenerForm = (watchedState, elementsDOM) => {
     if (error) {
       watchedState.errorMsgFeedback = error;
       watchedState.validStatus = 'error';
-    } else {
-      watchedState.validStatus = 'success';
-      watchedState.streamLoadingStatus = 'loading';
-      axios.get(getProxyURL(url))
-        .then((response) => {
-          const dataStream = parseRSS(response.data.contents);
-          addStreamInState(url, dataStream, watchedState);
-          watchedState.streamLoadingStatus = 'success';
-          watchedState.errorMsgFeedback = '';
-        })
-        .catch((err) => {
-          if (err.isAxiosError) {
-            watchedState.errorMsgFeedback = 'networkError';
-          } else if (err.isParsingError) {
-            watchedState.errorMsgFeedback = 'notValidRss';
-          } else {
-            watchedState.errorMsgFeedback = 'unknownError';
-          }
-          watchedState.streamLoadingStatus = 'error';
-        });
+      return;
     }
+
+    watchedState.validStatus = 'success';
+    watchedState.streamLoadingStatus = 'loading';
+
+    axios.get(getProxyURL(url))
+      .then((response) => {
+        const dataStream = parseRSS(response.data.contents);
+        addStreamInState(url, dataStream, watchedState);
+        watchedState.streamLoadingStatus = 'success';
+        watchedState.errorMsgFeedback = '';
+      })
+      .catch((err) => {
+        watchedState.errorMsgFeedback = err.isAxiosError ? 'networkError' : 'notValidRss';
+        watchedState.streamLoadingStatus = 'error';
+      });
   };
 
   elementsDOM.rssFormContainer.addEventListener('submit', addStream);

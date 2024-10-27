@@ -24,7 +24,6 @@ const parseRSS = (data) => {
     const error = new Error();
     error.isParsingError = true;
     throw error;
-    //  throw new Error('notValidRss');
   }
   return parseDataDOM(dataDOM);
 };

@@ -50,7 +50,7 @@ export default (state, i18next, elementsDOM) => {
     headingFeeds.textContent = i18next.t('feeds');
 
     const feedsList = document.createElement('ul');
-    feedsList.setAttribute('class', 'list-group mb-5');
+    feedsList.setAttribute('class', 'list-group');
 
     state.feeds.forEach((feed) => {
       const feedElement = document.createElement('li');
@@ -76,38 +76,38 @@ export default (state, i18next, elementsDOM) => {
     headingPosts.textContent = i18next.t('posts');
 
     const postsList = document.createElement('ul');
-    postsList.setAttribute('class', 'list-group mb-5');
+    postsList.classList.add('list-group');
 
     state.posts.forEach((post) => {
       const postElement = document.createElement('li');
-      postElement.setAttribute('class', 'list-group-item d-flex justify-content-between align-items-start');
+      postElement.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-start');
+
       const visitedLink = _.includes(state.uiState.visitedPosts, post.id);
-      const classLink = visitedLink ? 'font-weight-normal fw-normal text-decoration-none' : 'font-weight-bold fw-bold text-decoration-none';
-      const title = getTitle(post.title, i18next);
+      const classLink = visitedLink ? 'fw-normal' : 'fw-bold';
 
       const linkElement = document.createElement('a');
-      linkElement.setAttribute('href', post.link);
-      linkElement.setAttribute('class', classLink);
-      linkElement.setAttribute('data-id', post.id);
-      linkElement.setAttribute('target', '_blank');
-      linkElement.setAttribute('rel', 'noopener noreferrer');
-      linkElement.textContent = title;
+      linkElement.href = post.link;
+      linkElement.classList.add(classLink, 'text-decoration-none');
+      linkElement.dataset.id = post.id;
+      linkElement.target = '_blank';
+      linkElement.rel = 'noopener noreferrer';
+      linkElement.textContent = getTitle(post.title, i18next);
 
       const buttonElement = document.createElement('button');
-      buttonElement.setAttribute('type', 'button');
-      buttonElement.setAttribute('class', 'btn btn-primary btn-sm');
-      buttonElement.setAttribute('data-id', post.id);
-      buttonElement.setAttribute('data-bs-toggle', 'modal');
-      buttonElement.setAttribute('data-bs-target', '#modal');
+      buttonElement.type = 'button';
+      buttonElement.classList.add('btn', 'btn-primary', 'btn-sm');
+      buttonElement.dataset.id = post.id;
+      buttonElement.dataset.bsToggle = 'modal';
+      buttonElement.dataset.bsTarget = '#modal';
       buttonElement.textContent = i18next.t('modalButtonName');
 
-      postElement.append(linkElement);
-      postElement.append(buttonElement);
+      postElement.append(linkElement, buttonElement);
       postsList.prepend(postElement);
     });
+
+    // Очистим контейнер и добавим сначала заголовок, затем список постов
     elementsDOM.postsContainer.innerHTML = '';
-    elementsDOM.postsContainer.prepend(postsList);
-    elementsDOM.postsContainer.prepend(headingPosts);
+    elementsDOM.postsContainer.append(headingPosts, postsList);
   };
 
   return onChange(state, (path, value) => {
