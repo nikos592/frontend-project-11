@@ -32,6 +32,7 @@ const validateUrl = (url, feeds) => {
   const baseUrlSchema = yup.string().url().required();
   const feedUrls = feeds.map((feed) => feed.url);
   const actualUrlSchema = baseUrlSchema.notOneOf(feedUrls);
+
   try {
     actualUrlSchema.validateSync(url);
     return null;
@@ -40,8 +41,17 @@ const validateUrl = (url, feeds) => {
   }
 };
 
+const createPostsArray = (posts, feedId) => posts.map((dataPost) => ({
+  id: _.uniqueId(),
+  feedId,
+  title: dataPost.title,
+  link: dataPost.link,
+  description: dataPost.description,
+}));
+
 const addStreamInState = (url, dataStream, watchedState) => {
   const feedId = _.uniqueId();
+
   watchedState.feeds.unshift({
     id: feedId,
     url,
@@ -49,13 +59,7 @@ const addStreamInState = (url, dataStream, watchedState) => {
     description: dataStream.descriptionFeed,
   });
 
-  const newPosts = dataStream.posts.map((dataPost) => ({
-    id: _.uniqueId(),
-    feedId,
-    title: dataPost.title,
-    link: dataPost.link,
-    description: dataPost.description,
-  }));
+  const newPosts = createPostsArray(dataStream.posts, feedId);
   watchedState.posts.push(...newPosts);
 };
 
@@ -116,13 +120,7 @@ const isPostInState = (objStream, objState) => objStream.title === objState.titl
 const addNewPostsInState = (dataStream, feedId, watchedState) => {
   const stateFeedPosts = watchedState.posts.filter((post) => post.feedId === feedId);
   const differencePosts = _.differenceWith(dataStream.posts, stateFeedPosts, isPostInState);
-  const newPosts = differencePosts.map((dataPost) => ({
-    id: _.uniqueId(),
-    feedId,
-    title: dataPost.title,
-    link: dataPost.link,
-    description: dataPost.description,
-  }));
+  const newPosts = createPostsArray(differencePosts, feedId);
   watchedState.posts.push(...newPosts);
 };
 

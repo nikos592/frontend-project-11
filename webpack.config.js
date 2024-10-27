@@ -60,11 +60,11 @@ export default {
     compress: true,
     port: 8080,
     hot: true,
-    proxy: {
-      '/api': {
+    proxy: [
+      {
+        context: ['/api'],
         target: 'http://localhost:3000',
-        secure: false,
       },
-    },
+    ],
   },
 };
