@@ -6,7 +6,7 @@ import _ from 'lodash';
 import watcher from '../views/view.js';
 import parseRSS from './parseRSS.js';
 
-const proxy ='https://allorigins.hexlet.app/get';
+const proxy = 'https://allorigins.hexlet.app/get';
 const updateInterval = 5000;
 
 const getProxyURL = (url) => {
@@ -96,11 +96,11 @@ const createListenerForm = (watchedState, elementsDOM) => {
     }
   };
 
-  elementsDOM.rssFormConteiner.addEventListener('submit', addStream);
+  elementsDOM.rssFormContainer.addEventListener('submit', addStream);
 };
 
 const createListenerClickLink = (watchedState, elementsDOM) => {
-  const updateVsitedLink = (event) => {
+  const updateVisitedLink = (event) => {
     const postId = event.target.dataset.id;
     if (postId) {
       watchedState.uiState.visitedPosts.push(postId);
@@ -108,7 +108,7 @@ const createListenerClickLink = (watchedState, elementsDOM) => {
     }
   };
 
-  elementsDOM.postsConteiner.addEventListener('click', updateVsitedLink);
+  elementsDOM.postsContainer.addEventListener('click', updateVisitedLink);
 };
 
 const isPostInState = (objStream, objState) => objStream.title === objState.title;
@@ -128,8 +128,8 @@ const addNewPostsInState = (dataStream, feedId, watchedState) => {
 
 const updatePosts = (watchedState) => {
   const streamLoading = (feed) => {
-    const urlSream = feed.url;
-    return axios.get(getProxyURL(urlSream))
+    const urlStream = feed.url;
+    return axios.get(getProxyURL(urlStream))
       .then((response) => {
         const dataStream = parseRSS(response.data.contents);
         addNewPostsInState(dataStream, feed.id, watchedState);
@@ -149,9 +149,9 @@ const updatePosts = (watchedState) => {
 
 const runApp = (initState, i18next) => {
   const elementsDOM = {
-    rssFormConteiner: document.querySelector('.rss-form'),
-    feedsConteiner: document.querySelector('.feeds'),
-    postsConteiner: document.querySelector('.posts'),
+    rssFormContainer: document.querySelector('.rss-form'),
+    feedsContainer: document.querySelector('.feeds'),
+    postsContainer: document.querySelector('.posts'),
     modalTitle: document.querySelector('.modal-title'),
     modalBody: document.querySelector('.modal-body'),
     modalBtnLink: document.querySelector('.full-article'),

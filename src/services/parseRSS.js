@@ -1,23 +1,32 @@
-function parseRSS(rssText) {
-  const parser = new DOMParser();
-  const xmlDoc = parser.parseFromString(rssText, 'application/xml');
+const parseDataDOM = (dataDOM) => {
+  const channelElement = dataDOM.querySelector('channel');
+  const titleFeed = channelElement.querySelector('title').textContent;
+  const channelElementDesc = channelElement.querySelector('description');
+  const descriptionFeed = channelElementDesc === null ? '' : channelElementDesc.textContent;
 
-  const parseError = xmlDoc.getElementsByTagName('parsererror');
-  if (parseError.length) {
-    throw new Error('Ошибка при разборе XML');
-  }
-
-  const items = xmlDoc.querySelectorAll('item');
-  const feedData = [];
-
-  items.forEach((item) => {
-    const title = item.querySelector('title')?.textContent || 'Нет заголовка';
-    const description = item.querySelector('description')?.textContent || 'Нет описания';
-    const link = item.querySelector('link')?.textContent || '#';
-    feedData.push({ title, description, link });
+  const itemElements = dataDOM.querySelectorAll('item');
+  const posts = Array.from(itemElements).reverse().map((itemElement) => {
+    const itemElementDesc = itemElement.querySelector('description');
+    const descriptionPost = itemElementDesc === null ? '' : itemElementDesc.textContent;
+    return {
+      title: itemElement.querySelector('title').textContent,
+      link: itemElement.querySelector('link').textContent,
+      description: descriptionPost,
+    };
   });
+  return { titleFeed, descriptionFeed, posts };
+};
 
-  return feedData;
-}
+const parseRSS = (data) => {
+  const parser = new DOMParser();
+  const dataDOM = parser.parseFromString(data, 'application/xml');
+  if (dataDOM.querySelector('parsererror')) {
+    const error = new Error();
+    error.isParsingError = true;
+    throw error;
+    //  throw new Error('notValidRss');
+  }
+  return parseDataDOM(dataDOM);
+};
 
 export default parseRSS;
