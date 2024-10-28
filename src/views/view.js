@@ -87,7 +87,7 @@ export default (state, i18next, elementsDOM) => {
 
       const linkElement = document.createElement('a');
       linkElement.href = post.link;
-      linkElement.classList.add(classLink, '-none');
+      linkElement.classList.add(classLink, 'fw-bold');
       linkElement.dataset.id = post.id;
       linkElement.target = '_blank';
       linkElement.rel = 'noopener noreferrer';
